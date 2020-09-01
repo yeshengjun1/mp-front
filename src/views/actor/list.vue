@@ -73,7 +73,7 @@
             </span>
           </el-dialog>
         </template>
-      </el-table-column>  
+      </el-table-column>
     </el-table>
     <div id="pageBox">
       <el-pagination
@@ -89,6 +89,7 @@
 
 <script>
 import actor from '@/api/actor/index'
+import menu from '@/api/acl/menu'
 export default {
     data(){
     return {
@@ -103,9 +104,27 @@ export default {
     }
   },
   created() {
+    this.queryall()
+    this.hello()
     this.getActorList()
   },
   methods: {
+    hello(){
+      actor.hello()
+      .then(
+        response => {
+          console.log(response)
+        }
+      )
+    },
+    queryall(){
+      menu.getNestedTreeList()
+      .then(
+        response => {
+          console.log(response)
+        }
+      )
+    },
     //换页
     handleCurrentChange(){
       this.getActorList()

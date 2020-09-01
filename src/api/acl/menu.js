@@ -9,7 +9,7 @@ export default {
             method: 'get'
         })
     },
-    
+
     //根据id移除菜单
     removeById(id) {
         return request({
@@ -52,5 +52,8 @@ export default {
             params: {roleId,permissionId}
 
         })
-    }
+    },
+
+    //test hello
+
 }

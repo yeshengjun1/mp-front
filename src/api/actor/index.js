@@ -52,5 +52,11 @@ export default{
   //     method: 'get'
   //   })
   // },
+  hello(){
+    return request({
+      url: `/ucenterservice/apimember/hellolo`,
+      method: 'get',
+    })
+  }
 
-} 
+}
