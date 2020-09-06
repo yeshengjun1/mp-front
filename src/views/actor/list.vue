@@ -104,27 +104,10 @@ export default {
     }
   },
   created() {
-    this.queryall()
-    this.hello()
     this.getActorList()
   },
   methods: {
-    hello(){
-      actor.hello()
-      .then(
-        response => {
-          console.log(response)
-        }
-      )
-    },
-    queryall(){
-      menu.getNestedTreeList()
-      .then(
-        response => {
-          console.log(response)
-        }
-      )
-    },
+
     //换页
     handleCurrentChange(){
       this.getActorList()
@@ -142,7 +125,7 @@ export default {
     },
     //根据id删除演员
     handleDelete(id){
-      actor.delectbyId(id).then(
+      actor.deleteById(id).then(
         () => {
           this.getActorList()
           this.$message({

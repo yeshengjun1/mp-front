@@ -36,6 +36,12 @@ export default {
           type: 'success',
           message: '生成成功'
         })
+        this.$router.push({
+          path:'/statistics/daily/echartShow',
+          query: {
+            id: response.data.dailyId
+          }
+        })
       })
     }
   }

@@ -9,11 +9,11 @@
           :before-close="handleClose">
           <el-form ref="form"  label-width="80px">
             <el-form-item>
-              <el-col class="line" :span="2">标题</el-col> 
+              <el-col class="line" :span="2">标题</el-col>
               <el-col :span="4">
                 <el-input v-model="episode.title" size="small" style="width:100%"></el-input>
-              </el-col> 
-              <el-col class="line" :span="4">&nbsp;&nbsp;	第几集</el-col> 
+              </el-col>
+              <el-col class="line" :span="4">&nbsp;&nbsp;	第几集</el-col>
               <el-col :span="4">
                 <el-input v-model="episode.episodeNum" size="small" style="width:100%"></el-input>
               </el-col>
@@ -53,13 +53,13 @@
           </el-table-column>
           <el-table-column label="剧集名称" prop="title">
           </el-table-column>
-          
+
           <el-table-column label="操作" width="200">
         <template slot-scope="scope">
           <el-button type="text" @click="deleteEpisode(scope.row.id,scope.row.videoSourceId)">删除</el-button>
         </template>
         </el-table-column>
-        
+
       </el-table>
       <el-button type="primary" @click="onSubmit">确认并下一步</el-button>  </div>
 </template>
@@ -86,7 +86,7 @@ export default {
           videoOriginalName: '',
           duration:0,
           size:0
-        }, 
+        },
         dialogVisible: false,
         fileList: [],
         isDisabled: true //按钮是否禁用
@@ -96,8 +96,8 @@ export default {
       onSubmit(){
           this.$parent.next()
           this.step2 = false
-          this.step1 = false 
-          this.$emit('translation',this.step1,this.step2,true)  
+          this.step1 = false
+          this.$emit('translation',this.step1,this.step2,true)
       },
       //删除episode
       deleteEpisode(episodeId,videoSourceId){
@@ -131,16 +131,15 @@ export default {
                   episodeApi.queryEpisodes(this.rid)
                   .then(
                     response => {
-                      //todo
                       this.tableData = response.data.list
                     }
                   )
                 }
               )
             }
-            
+
           )
-          
+
 
       },
       //确认关闭资源弹窗
@@ -165,7 +164,7 @@ export default {
           this.episode.videoOriginalName = file.name
           this.isDisabled = false
       }
-      
+
     }
 }
 </script>
@@ -185,5 +184,5 @@ export default {
         margin-bottom: 0;
         width: 50%;
     }
-    
+
 </style>

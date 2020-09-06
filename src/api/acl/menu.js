@@ -45,11 +45,11 @@ export default {
     },
 
     //给角色分配权限
-    doAssign(roleId,permissionId){
+    doAssign(roleId,permissionIds){
         return request({
             url: `${api_name}/doAssign`,
             method: 'post',
-            params: {roleId,permissionId}
+            params: {roleId,permissionIds}
 
         })
     },

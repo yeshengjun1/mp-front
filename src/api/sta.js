@@ -6,5 +6,11 @@ export default {
       url: `${api_name}/${day}`,
       method: 'post'
     })
-  }
+  },
+  showDaily(id) {
+    return request({
+      url: `${api_name}/${id}`,
+      method: 'get'
+    })
+  },
 }

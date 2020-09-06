@@ -9,7 +9,7 @@
     <!--step1-->
     <step1 v-if="step1Show" @translation="translation(arguments)" @resourceId="getResourceId"></step1>
     <step2 v-if="step2Show" @translation="translation(arguments)" :rid="resourceId"></step2>
-    <step3 v-if="step3Show" :rid="resourceId"></step3>    
+    <step3 v-if="step3Show" :rid="resourceId"></step3>
   </div>
 </template>
 
@@ -32,9 +32,8 @@ export default {
        step1,
        step2,
        step3
-       //todo 点击step1的下一步，step2获取resourceId操作
     },
-    
+
     methods: {
       //父组件获取resourceId
       getResourceId(data){
@@ -48,7 +47,7 @@ export default {
       next() {
         if (this.active++ > 2) this.active = 1;
       },
-      
+
       //封面上传成功钩子
       handleAvatarSuccess(data) {
         this.resource.cover = data.data.url

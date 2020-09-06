@@ -7,7 +7,7 @@ export default{
       method: 'get'
     })
   },
-  delectbyId(id){
+  deleteById(id){
     return request({
       url: `/mp_movie/actor/${id}`,
       method: 'delete'
@@ -22,7 +22,7 @@ export default{
       }
     )
   },
-  //修改讲师信息
+  //修改演员信息
   updateactor(actor){
     return request(
       {
@@ -46,17 +46,5 @@ export default{
       data: pageInfo
     })
   },
-  // queryPage(){
-  //   return request({
-  //     url: `/mp_movie/actor/page`,
-  //     method: 'get'
-  //   })
-  // },
-  hello(){
-    return request({
-      url: `/ucenterservice/apimember/hellolo`,
-      method: 'get',
-    })
-  }
 
 }
