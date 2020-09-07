@@ -33,9 +33,6 @@ export default {
   // 监听器
   watch: {
     $route(to, from) {
-      console.log('路由变化......')
-      console.log(to)
-      console.log(from)
       this.init()
     }
   },

@@ -41,9 +41,7 @@ const mutations = {
 const actions = {
   async generateRoutes({ commit }, roles) {
     // 取后台路由
-
     const asyncRouter = await getMenu()
-
     return new Promise(resolve => {
       const tmp = asyncRouter.data.permissionList
       const accessedRoutes = filterAsyncRouter(tmp)
